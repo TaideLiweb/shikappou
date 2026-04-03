@@ -817,7 +817,7 @@ h3 {
   }
 
   .caption-box {
-    left: 1rem;
+    left: -1rem;
     bottom: 1rem;
     padding: 0.65rem 1rem;
   }
