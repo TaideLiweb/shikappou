@@ -25,7 +25,7 @@ body {
 }
 
 body {
-  background: var(--zinc-950);
+  background: #000;
   color: var(--stone-100);
   font-family: "Noto Serif JP", serif;
 }
@@ -41,17 +41,31 @@ a {
 }
 
 .page {
-  background: var(--zinc-950);
+  position: relative;
+  isolation: isolate;
   color: var(--stone-100);
 }
 
 .hero {
   position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
+}
+
+.hero-slides {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .hero-bg,
@@ -63,6 +77,12 @@ a {
 .hero-bg {
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 900ms ease;
+}
+
+.hero-bg.is-active {
+  opacity: 1;
 }
 
 .hero-overlay {
@@ -161,6 +181,7 @@ h3 {
 
 .section {
   position: relative;
+  z-index: 1;
   padding: 6rem 1.5rem;
 }
 
@@ -438,7 +459,10 @@ h3 {
 }
 
 .chef {
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  background: rgba(24, 24, 27, 0.56);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .chef-wrap {
@@ -503,6 +527,7 @@ h3 {
 .chef-panel {
   position: relative;
   border: 1px solid rgba(68, 64, 60, 0.3);
+  background: rgba(9, 9, 11, 0.38);
   padding: 3rem;
 }
 
@@ -713,6 +738,8 @@ h3 {
 }
 
 .site-footer {
+  position: relative;
+  z-index: 1;
   padding: 3rem 1.5rem;
   border-top: 1px solid var(--stone-900);
   background: var(--zinc-950);
@@ -855,6 +882,7 @@ h3 {
   }
 
   .reveal,
+  .hero-bg,
   .about-slide,
   .social-links a,
   .reserve-button {
