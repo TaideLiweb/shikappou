@@ -562,36 +562,14 @@ h3 {
 }
 
 .chef-layout {
+  margin-top: 2rem;
+}
+
+.chef-composition {
   display: grid;
-  grid-template-columns: minmax(0, 1.42fr) minmax(360px, 0.58fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
   align-items: start;
-}
-
-.chef-collage {
-  display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-  grid-template-rows: repeat(5, 180px);
-  gap: 1.25rem;
-  min-height: 0;
-  padding: 0 0 1rem;
-  margin-left: 0;
-}
-
-.chef-panel {
-  position: relative;
-  min-height: 100%;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  display: flex;
-  align-items: flex-start;
-}
-
-.chef-body {
-  color: var(--stone-300);
-  position: sticky;
-  top: 6rem;
 }
 
 .chef-photo {
@@ -599,6 +577,7 @@ h3 {
   overflow: hidden;
   background: rgba(12, 10, 9, 0.92);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+  min-height: 0;
 }
 
 .chef-photo img {
@@ -608,41 +587,50 @@ h3 {
   object-fit: cover;
 }
 
-.chef-photo-wide {
-  grid-column: 1 / span 6;
-  grid-row: 1 / span 2;
+.chef-photo-mushroom {
+  grid-column: 1;
+  grid-row: 1;
+  aspect-ratio: 4 / 5;
 }
 
-.chef-photo-vertical {
-  grid-column: 7 / span 2;
-  grid-row: 2 / span 1;
-  align-self: stretch;
+.chef-photo-fish {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  aspect-ratio: 16 / 7;
 }
 
-.chef-photo-bottom {
-  grid-column: 3 / span 6;
-  grid-row: 3 / span 2;
+.chef-photo-orange {
+  grid-column: 2;
+  grid-row: 3;
+  aspect-ratio: 4 / 5;
 }
 
-.chef-photo-side {
-  grid-column: 1 / span 2;
-  grid-row: 3 / span 1;
-  align-self: start;
-  margin-top: 0;
-}
-
-.chef-copy-block {
-  position: relative;
-  z-index: 4;
-  padding: 0;
+.chef-text {
+  color: var(--stone-300);
   text-align: left;
-  max-width: 24rem;
+  align-self: center;
+  min-width: 0;
 }
 
-.chef-copy-block .body-text {
+.chef-text-intro {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 34rem;
+  padding-top: 0.75rem;
+}
+
+.chef-text-story {
+  grid-column: 1;
+  grid-row: 3;
+  max-width: 38rem;
+  padding-right: 1.5rem;
+  align-self: center;
+}
+
+.chef-text .body-text {
   margin: 0;
   font-size: clamp(0.98rem, 1vw, 1.06rem);
-  line-height: 2.4;
+  line-height: 2.35;
   letter-spacing: 0.12em;
 }
 
@@ -901,23 +889,9 @@ h3 {
     height: 600px;
   }
 
-  .chef-layout {
-    grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.58fr);
-    gap: 2.75rem;
-  }
-
-  .chef-collage {
-    grid-template-rows: repeat(4, 132px);
-    gap: 1rem;
-  }
-
-  .chef-panel {
-    min-height: 100%;
-    padding: 0;
-  }
-
-  .chef-body {
-    top: 4rem;
+  .chef-composition {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem 8rem;
   }
 
   .hours-grid {
@@ -956,36 +930,37 @@ h3 {
   }
 
   .chef-layout {
+    margin-top: 1.5rem;
+  }
+
+  .chef-composition {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
-  }
-
-  .chef-panel {
-    order: 1;
-    min-height: auto;
-  }
-
-  .chef-collage {
-    order: 2;
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    grid-template-rows: repeat(4, 132px);
     gap: 1rem;
-    padding: 0;
   }
 
   .chef-photo {
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
   }
 
-  .chef-copy-block {
-    padding: 0;
-    text-align: center;
+  .chef-text-intro,
+  .chef-text-story,
+  .chef-photo-mushroom,
+  .chef-photo-fish,
+  .chef-photo-orange {
+    grid-column: auto;
+    grid-row: auto;
     max-width: none;
+    padding: 0;
   }
 
-  .chef-body {
-    position: static;
+  .chef-photo-mushroom,
+  .chef-photo-fish,
+  .chef-photo-orange {
+    height: auto;
+  }
+
+  .chef-text {
+    text-align: left;
   }
 
   .chef-points-grid {
