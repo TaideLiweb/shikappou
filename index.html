@@ -3,14 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>蒔 | 預約制 無菜單私廚料理</title>
+    <title>蒔｜預約制無菜單料理</title>
     <meta
       name="description"
-      content="蒔，預約制無菜單私廚料理。運用世界各地時令食材，呈現季節料理與美學。"
+      content="精選時令食材，呈現季節料理"
     />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "蒔 kappou",
+      "url": "https://shi-kappou.com",
+      "servesCuisine": "Japanese",
+      "acceptsReservations": "True",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://inline.app/booking/-OoTwBCVxhK1kaJT-Y8A:inline-live-4/-OoTwBKkKCm-xSU3b6Op",
+          "inLanguage": "zh-TW",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        }
+      }
+    }
+    </script>
+    <link rel="canonical" href="https://shi-kappou.com" />
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon-180x180.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192x192.png" />
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,7 +52,7 @@
 
         <div class="hero-content">
           <div class="reveal visible">
-            <h1>蒔</h1>
+            <h1 class="hero-logo"><img src="assets/logo.png" alt="蒔 kappou"></h1>
             <div class="line line-24"></div>
             <p class="hero-subtitle">預約制 無菜單私廚料理</p>
           </div>
@@ -230,7 +254,7 @@
             <h2>訂位資訊</h2>
             <div class="line line-16"></div>
             <div class="reserve-button-wrap reveal delay-1">
-              <a href="#" class="reserve-button">線上訂位</a>
+              <a href="https://inline.app/booking/-OoTwBCVxhK1kaJT-Y8A:inline-live-4/-OoTwBKkKCm-xSU3b6Op" class="reserve-button">線上訂位</a>
             </div>
           </div>
 

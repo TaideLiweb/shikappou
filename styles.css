@@ -76,6 +76,13 @@ a {
   text-align: center;
 }
 
+
+.hero-logo img{
+   width: 60px;
+   display: block; 
+   margin: 0 auto ;
+}
+
 .hero h1,
 h2,
 h3,
